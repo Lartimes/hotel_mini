@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lartimes.hotel.mapper.RoomStockMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lartimes.hotel.model.po.RoomStock">
+        <id column="id" property="id" />
+        <result column="room_id" property="roomId" />
+        <result column="stock_id" property="stockId" />
+        <result column="num" property="num" />
+        <result column="fail_num" property="failNum" />
+        <result column="remark" property="remark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        room_id, stock_id, num, fail_num, remark, id
+    </sql>
+
+</mapper>

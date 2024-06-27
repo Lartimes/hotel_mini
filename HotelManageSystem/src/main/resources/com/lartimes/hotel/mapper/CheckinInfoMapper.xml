@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lartimes.hotel.mapper.CheckinInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lartimes.hotel.model.po.CheckinInfo">
+        <id column="id" property="id" />
+        <result column="guest_id" property="guestId" />
+        <result column="room_id" property="roomId" />
+        <result column="checkout_date" property="checkoutDate" />
+        <result column="checkin_date" property="checkinDate" />
+        <result column="status" property="status" />
+        <result column="is_pay" property="isPay" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        guest_id, room_id, checkout_date, checkin_date, status, is_pay, id
+    </sql>
+    <update id="updateDate">
+            update checkin_info set
+        <trim prefix="set" prefixOverrides=",">
+            <if test="from != null"> check_in_date = DATE (#{from})</if>
+            <if test="to != null">  check_out_date = DATE (#{to})</if>
+        </trim>
+            where room_id = #{roomId}
+
+    </update>
+
+</mapper>

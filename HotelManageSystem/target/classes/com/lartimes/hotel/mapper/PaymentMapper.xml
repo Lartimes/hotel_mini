@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lartimes.hotel.mapper.PaymentMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lartimes.hotel.model.po.Payment">
+        <id column="pay_id" property="payId" />
+        <result column="guest_id" property="guestId" />
+        <result column="payment_date" property="paymentDate" />
+        <result column="payment_cost" property="paymentCost" />
+        <result column="status" property="status" />
+        <result column="pay_method" property="payMethod" />
+        <result column="remark" property="remark" />
+        <result column="payment_type" property="paymentType" />
+        <result column="payment_id" property="paymentId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        pay_id, guest_id, payment_date, payment_cost, status, pay_method, remark, payment_type , payment_id
+    </sql>
+
+</mapper>

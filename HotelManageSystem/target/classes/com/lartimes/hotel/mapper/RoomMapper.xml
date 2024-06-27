@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lartimes.hotel.mapper.RoomMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lartimes.hotel.model.po.Room">
+        <id column="id" property="id" />
+        <result column="room_type" property="roomType" />
+        <result column="room_status" property="roomStatus" />
+        <result column="room_price" property="roomPrice" />
+        <result column="room_floor" property="roomFloor" />
+        <result column="room_position" property="roomPosition" />
+        <result column="room_area" property="roomArea" />
+        <result column="bed_nums" property="bedNums" />
+        <result column="people_nums" property="peopleNums" />
+        <result column="remark" property="remark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, room_type, room_status, room_price, room_floor, room_position, room_area, bed_nums, people_nums, remark
+    </sql>
+    <update id="changeStatus" >
+        update room
+        set room_status = #{status}
+        where id = #{pk}
+    </update>
+
+</mapper>
